@@ -1,9 +1,16 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const App = ({name}) => {
-    return(
-        <p onClick={()=>{console.info('Hello world from client....');}}>Hello world...  from react {name}</p>
-    )
+function App({ name }) {
+  return (
+    <p>
+      Hello world...  from react
+      {name}
+    </p>
+  );
 }
+App.propTypes = {
+  name: PropTypes.string.isRequired,
+};
 
 export default App;
