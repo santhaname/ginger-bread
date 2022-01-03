@@ -3,7 +3,7 @@
 ## Todo
 
 - [x] Basic integration with babel webpack react & express
-- [ ] Redux Integration
+- [x] Redux Integration
 - [ ] GraphQL Integration
 - [ ] DustJS Templating
 - [ ] RTL Integration
