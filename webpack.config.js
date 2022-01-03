@@ -10,11 +10,6 @@ export default [
   {
     entry: { browser: './client/main.js' },
     mode: 'development',
-    resolve: {
-      alias: {
-        client: path.resolve(currentDirectory, 'client'),
-      },
-    },
     output: {
       filename: 'main.js',
       path: path.resolve(currentDirectory, 'dist/public'),
@@ -32,8 +27,22 @@ export default [
           use: {
             loader: 'babel-loader',
             options: {
-              presets: ['@babel/preset-env', '@babel/preset-react'],
+              presets: [[
+                '@babel/preset-env',
+                {
+                  targets: {
+                    esmodules: true,
+                  },
+                },
+              ],
+              '@babel/preset-react'],
             },
+          },
+        },
+        {
+          test: /\.m?js/,
+          resolve: {
+            fullySpecified: false,
           },
         },
       ],
@@ -59,7 +68,15 @@ export default [
           use: {
             loader: 'babel-loader',
             options: {
-              presets: ['@babel/preset-env', '@babel/preset-react'],
+              presets: [[
+                '@babel/preset-env',
+                {
+                  targets: {
+                    esmodules: true,
+                  },
+                },
+              ],
+              '@babel/preset-react'],
             },
           },
         },

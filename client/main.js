@@ -1,9 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from 'client/app';
+import { Provider } from 'react-redux';
+
+import App from './app';
+import CreateStore from '../server/store/store';
+
 ReactDOM.hydrate(
-    <React.StrictMode>
-        <App name={'from'}/>
-    </React.StrictMode>, 
-    document.getElementById('root')
-    );
+  // eslint-disable-next-line no-underscore-dangle
+  <Provider store={CreateStore(window.__PRELOADED_STATE_)}>
+    <App />
+  </Provider>,
+  document.getElementById('root'),
+);

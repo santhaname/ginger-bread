@@ -1,16 +1,20 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { useSelector, useDispatch } from 'react-redux';
+import { increment } from '../server/store/reducers/counterSlice';
 
-function App({ name }) {
+function App() {
+  const count = useSelector((state) => state.counter.value);
+  const dispatch = useDispatch();
+  const onIncrement = () => {
+    dispatch(increment());
+  };
   return (
     <p>
       Hello world...  from react
-      {name}
+      {count}
+      <button type="button" onClick={onIncrement}>+</button>
     </p>
   );
 }
-App.propTypes = {
-  name: PropTypes.string.isRequired,
-};
 
 export default App;
