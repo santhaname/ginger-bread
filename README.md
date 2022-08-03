@@ -19,5 +19,8 @@ Commit 7
 
 resolve conflict
 
+
+rebase
+line 1
 line3
 line4
