@@ -18,3 +18,5 @@ Commit 6
 Commit 7    
 
 resolve conflict
+
+line3
