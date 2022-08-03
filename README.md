@@ -20,3 +20,4 @@ Commit 7
 resolve conflict
 
 line3
+line4
